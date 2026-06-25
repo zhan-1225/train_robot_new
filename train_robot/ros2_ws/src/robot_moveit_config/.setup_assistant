@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: robot_description
+    relative_path: urdf/robot_grasp_moveit.urdf
+  srdf:
+    relative_path: config/robot.srdf
+  package_settings:
+    author_name: hyx
+    author_email: 2528028401@qq.com
+    generated_timestamp: 1778209536
+  control_xacro:
+    command:
+      - velocity
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - velocity
+    state:
+      - position
+      - velocity

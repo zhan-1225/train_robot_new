@@ -1,0 +1,62 @@
+# This config file is used by ros2_control
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    base_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+
+    velocity_controller:
+      type: velocity_controllers/JointGroupVelocityController
+
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+arm_controller:
+  ros__parameters:
+    joints:
+      - j1
+      - j2
+      - j3
+      - j4
+      - j5
+      - j6
+    command_interfaces:
+      - velocity
+    state_interfaces:
+      - position
+      - velocity
+    gains:
+      j1: {p: 5.0,i: 0.0, d: 0.0, i_clamp: 1.0}
+      j2: {p: 5.0,i: 0.0, d: 0.0, i_clamp: 1.0}
+      j3: {p: 5.0,i: 0.0, d: 0.0, i_clamp: 1.0}
+      j4: {p: 5.0,i: 0.0, d: 0.0, i_clamp: 1.0}
+      j5: {p: 5.0,i: 0.0, d: 0.0, i_clamp: 1.0}
+      j6: {p: 5.0,i: 0.0, d: 0.0, i_clamp: 1.0}
+    constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.01
+      allowed_goal_duration: 0.5
+
+# velocity_controller:
+#   ros__parameters:
+#     joints:
+#       - slider_to_cart
+
+base_controller:
+  ros__parameters:
+    joints:
+      - wl1
+      - wl2
+      - wr1
+      - wr2
+    command_interfaces:
+      - velocity
+    state_interfaces:
+      - position
+      - velocity

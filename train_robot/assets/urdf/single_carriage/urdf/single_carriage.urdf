@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="single_carriage">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.000871958345771546 -0.000549730972082286 0.203498642914054"
+        rpy="0 0 0" />
+      <mass
+        value="11771.9297423622" />
+      <inertia
+        ixx="222136.871694353"
+        ixy="-0.704377881275329"
+        ixz="-8.55566928414991"
+        iyy="19820.6060681922"
+        iyz="6.58145912618343"
+        izz="228900.206069743" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.309803921568627 0.309803921568627 0.309803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="wr1">
+    <inertial>
+      <origin
+        xyz="0.1 0 1.11022302462516E-16"
+        rpy="0 0 0" />
+      <mass
+        value="419.648305275831" />
+      <inertia
+        ixx="76.5211323178222"
+        ixy="-4.78304134730335E-15"
+        ixz="-1.15379614571497E-16"
+        iyy="48.4740196524043"
+        iyz="-3.4506541142972E-15"
+        izz="48.4740196524043" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/wr1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/wr1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wr1"
+    type="continuous">
+    <origin
+      xyz="0.84 5.4 -0.65"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wr1" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wl1">
+    <inertial>
+      <origin
+        xyz="-0.1 0 -1.11022302462516E-16"
+        rpy="0 0 0" />
+      <mass
+        value="419.64830527583" />
+      <inertia
+        ixx="76.5211323178222"
+        ixy="-3.20752085296622E-15"
+        ixz="-1.50851007052655E-15"
+        iyy="48.4740196524043"
+        iyz="-6.17272436868412E-16"
+        izz="48.4740196524043" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/wl1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/wl1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wl1"
+    type="continuous">
+    <origin
+      xyz="-0.84 5.4 -0.65"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wl1" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wr2">
+    <inertial>
+      <origin
+        xyz="0.0999999999999999 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="419.648305275831" />
+      <inertia
+        ixx="76.5211323178223"
+        ixy="-3.28443737207637E-15"
+        ixz="-1.26556621229307E-15"
+        iyy="48.4740196524043"
+        iyz="-4.86589935011495E-15"
+        izz="48.4740196524043" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/wr2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/wr2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wr2"
+    type="continuous">
+    <origin
+      xyz="0.84 4 -0.65"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wr2" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wl2">
+    <inertial>
+      <origin
+        xyz="-0.0999999999999999 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="419.648305275831" />
+      <inertia
+        ixx="76.5211323178223"
+        ixy="-1.27275613008951E-15"
+        ixz="-1.52466175911111E-16"
+        iyy="48.4740196524043"
+        iyz="5.76795555762288E-16"
+        izz="48.4740196524043" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/wl2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/wl2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wl2"
+    type="continuous">
+    <origin
+      xyz="-0.84 4 -0.65"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wl2" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wr3">
+    <inertial>
+      <origin
+        xyz="0.0999999999999999 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="419.64830527583" />
+      <inertia
+        ixx="76.5211323178222"
+        ixy="-8.16888503379963E-15"
+        ixz="-8.44991821401153E-17"
+        iyy="48.4740196524043"
+        iyz="1.04625509644851E-16"
+        izz="48.4740196524043" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/wr3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/wr3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wr3"
+    type="continuous">
+    <origin
+      xyz="0.84 -4 -0.65"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wr3" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wl3">
+    <inertial>
+      <origin
+        xyz="-0.1 0 -1.11022302462516E-16"
+        rpy="0 0 0" />
+      <mass
+        value="419.648305275831" />
+      <inertia
+        ixx="76.5211323178223"
+        ixy="-1.6757331009332E-15"
+        ixz="1.68978427054539E-16"
+        iyy="48.4740196524043"
+        iyz="-1.84314369322535E-16"
+        izz="48.4740196524043" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/wl3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/wl3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wl3"
+    type="continuous">
+    <origin
+      xyz="-0.84 -4 -0.65"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wl3" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wr4">
+    <inertial>
+      <origin
+        xyz="0.1 0 -1.11022302462516E-16"
+        rpy="0 0 0" />
+      <mass
+        value="419.648305275831" />
+      <inertia
+        ixx="76.5211323178223"
+        ixy="-5.53273218274209E-15"
+        ixz="6.31156561868667E-16"
+        iyy="48.4740196524043"
+        iyz="-7.09068220805519E-16"
+        izz="48.4740196524043" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/wr4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/wr4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wr4"
+    type="continuous">
+    <origin
+      xyz="0.84 -5.4 -0.65"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wr4" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wl4">
+    <inertial>
+      <origin
+        xyz="-0.1 0 1.11022302462516E-16"
+        rpy="0 0 0" />
+      <mass
+        value="419.648305275831" />
+      <inertia
+        ixx="76.5211323178223"
+        ixy="-3.43888320585222E-15"
+        ixz="7.47863790181562E-16"
+        iyy="48.4740196524043"
+        iyz="3.87566136591152E-15"
+        izz="48.4740196524043" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/wl4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/wl4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wl4"
+    type="continuous">
+    <origin
+      xyz="-0.84 -5.4 -0.65"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wl4" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="buffera1">
+    <inertial>
+      <origin
+        xyz="0.37786294261192 0.0104561973276471 -0.0128538090287759"
+        rpy="0 0 0" />
+      <mass
+        value="21.222663477634" />
+      <inertia
+        ixx="0.483372365590592"
+        ixy="-0.0834919697701514"
+        ixz="0.0691394497683161"
+        iyy="1.90175332091465"
+        iyz="-0.000227720987181583"
+        izz="2.01631259846016" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/buffera1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.764705882352941 0.694117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/buffera1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="buffera1"
+    type="prismatic">
+    <origin
+      xyz="0 6.25 -0.2825"
+      rpy="0 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="buffera1" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="buffera2">
+    <inertial>
+      <origin
+        xyz="0.0282464073002029 -0.0193101229903139 0.000418380290337139"
+        rpy="0 0 0" />
+      <mass
+        value="4.21285337351404" />
+      <inertia
+        ixx="0.0440956773455516"
+        ixy="-0.00525856458676471"
+        ixz="-0.000174566747653994"
+        iyy="0.0300435932801128"
+        iyz="9.8365832373885E-05"
+        izz="0.0367158398070253" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/buffera2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.341176470588235 1 0.988235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/buffera2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="buffera2"
+    type="revolute">
+    <origin
+      xyz="0.69186 -0.0955 0.008"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="buffera1" />
+    <child
+      link="buffera2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="bufferb1">
+    <inertial>
+      <origin
+        xyz="0.377862940733308 0.0104561963157773 -0.0128538091896643"
+        rpy="0 0 0" />
+      <mass
+        value="21.2226633423904" />
+      <inertia
+        ixx="0.483372361781699"
+        ixy="-0.0834919628994019"
+        ixz="0.069139450998706"
+        iyy="1.90175330793061"
+        iyz="-0.000227720335022887"
+        izz="2.01631258192833" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/bufferb1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.764705882352941 0.694117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/bufferb1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bufferb1"
+    type="prismatic">
+    <origin
+      xyz="0 -6.25 -0.2825"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="bufferb1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="bufferb2">
+    <inertial>
+      <origin
+        xyz="0.0282464073002024 -0.0193101229903148 0.00041838029033725"
+        rpy="0 0 0" />
+      <mass
+        value="4.21285337351401" />
+      <inertia
+        ixx="0.0440956773455515"
+        ixy="-0.00525856458676472"
+        ixz="-0.000174566747654006"
+        iyy="0.0300435932801127"
+        iyz="9.83658323739732E-05"
+        izz="0.0367158398070251" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/bufferb2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.341176470588235 1 0.988235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_carriage/meshes/bufferb2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bufferb2"
+    type="revolute">
+    <origin
+      xyz="0.69186 -0.0955 0.008"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="bufferb1" />
+    <child
+      link="bufferb2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

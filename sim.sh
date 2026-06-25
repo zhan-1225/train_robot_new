@@ -1,0 +1,1 @@
+python train_robot/core/start_stage.py
