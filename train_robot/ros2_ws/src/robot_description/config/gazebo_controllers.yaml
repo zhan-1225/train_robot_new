@@ -4,9 +4,17 @@ controller_manager:
 
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
+      node_options_args:
+        - --ros-args
+        - --params-file
+        - /home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/config/gazebo_controllers.yaml
 
     velocity_controller:
       type: velocity_controllers/JointGroupVelocityController
+      node_options_args:
+        - --ros-args
+        - --params-file
+        - /home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/config/gazebo_controllers.yaml
 
 
 velocity_controller:

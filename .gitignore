@@ -3,6 +3,7 @@
 **/install/
 **/log/
 **/.thumb/
+.ros_log/
 
 # Python 缓存
 **/__pycache__/
@@ -12,6 +13,7 @@
 .Python
 env/
 venv/
+.venv/
 ENV/
 
 # C/C++ 编译中间文件（某些情况下可能出现）

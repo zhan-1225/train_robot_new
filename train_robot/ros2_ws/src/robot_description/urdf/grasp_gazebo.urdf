@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="grasp">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-1.74535037196456E-17 -0.00816566234932665 1.62758265662701E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.110137166941154" />
+      <inertia
+        ixx="0.000119442941686907"
+        ixy="-2.18819689009832E-21"
+        ixz="1.00533007844443E-20"
+        iyy="0.000201561725123519"
+        iyz="-5.82720918507605E-21"
+        izz="8.42429416869073E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/zhan/train_robot-main/train_robot/assets/urdf/grasp/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/zhan/train_robot-main/train_robot/assets/urdf/grasp/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="ld">
+    <inertial>
+      <origin
+        xyz="-8.61561256365606E-19 0.02 0.004"
+        rpy="0 0 0" />
+      <mass
+        value="0.08" />
+      <inertia
+        ixx="6.70933333333333E-05"
+        ixy="2.52899986831941E-20"
+        ixz="-1.69445820945071E-20"
+        iyy="6.70933333333333E-05"
+        iyz="-4.22319333728353E-22"
+        izz="0.000133333333333333" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/zhan/train_robot-main/train_robot/assets/urdf/grasp/meshes/ld.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/zhan/train_robot-main/train_robot/assets/urdf/grasp/meshes/ld.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jd"
+    type="fixed">
+    <origin
+      xyz="0 -0.035 -0.068"
+      rpy="0 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="ld" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lu1">
+    <inertial>
+      <origin
+        xyz="0 0 0.06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00942477796076938" />
+      <inertia
+        ixx="1.13686384151781E-05"
+        ixy="-1.99136488891556E-56"
+        ixz="1.19366462190883E-38"
+        iyy="1.13686384151781E-05"
+        iyz="-5.46392484019368E-39"
+        izz="1.17809724509617E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/zhan/train_robot-main/train_robot/assets/urdf/grasp/meshes/lu1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/zhan/train_robot-main/train_robot/assets/urdf/grasp/meshes/lu1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ju1"
+    type="fixed">
+    <origin
+      xyz="-0.035 -0.013 0.04"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lu1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lu2">
+    <inertial>
+      <origin
+        xyz="-6.93889390390723E-18 0 0.06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00942477796076938" />
+      <inertia
+        ixx="1.13686384151781E-05"
+        ixy="-1.99136488891556E-56"
+        ixz="1.19366462190883E-38"
+        iyy="1.13686384151781E-05"
+        iyz="-5.46392484019368E-39"
+        izz="1.17809724509617E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/zhan/train_robot-main/train_robot/assets/urdf/grasp/meshes/lu2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/zhan/train_robot-main/train_robot/assets/urdf/grasp/meshes/lu2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ju2"
+    type="fixed">
+    <origin
+      xyz="0.035 -0.013 0.04"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lu2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

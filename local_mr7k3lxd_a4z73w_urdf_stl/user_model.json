@@ -1,0 +1,458 @@
+{
+  "robot_name": "generated_robot",
+  "links": [
+    {
+      "link_id": "link_001",
+      "name": "arm_base_link",
+      "part_ids": [
+        "part_005",
+        "part_002"
+      ],
+      "mass": 4.855244706856512,
+      "inertia": {
+        "ixx": 0.03168020305964969,
+        "iyy": 0.02966042800062141,
+        "izz": 0.04567208135343448,
+        "ixy": 0,
+        "ixz": -0.00025796262759947286,
+        "iyz": 0
+      },
+      "visual_meshes": [],
+      "collision_meshes": []
+    },
+    {
+      "link_id": "link_002",
+      "name": "arm_link1",
+      "part_ids": [
+        "part_003",
+        "part_004",
+        "part_006"
+      ],
+      "mass": 12.615124410746569,
+      "inertia": {
+        "ixx": 0.07429470878428823,
+        "iyy": 0.08364785708655953,
+        "izz": 0.07768430012362493,
+        "ixy": 8.272671626324239e-10,
+        "ixz": -0.0009613967537165369,
+        "iyz": 6.294978661235229e-11
+      },
+      "visual_meshes": [],
+      "collision_meshes": []
+    },
+    {
+      "link_id": "link_003",
+      "name": "arm_link2",
+      "part_ids": [
+        "part_009",
+        "part_007",
+        "part_012",
+        "part_008",
+        "part_010",
+        "part_013",
+        "part_014"
+      ],
+      "mass": 20.87430067977186,
+      "inertia": {
+        "ixx": 2.082007988525544,
+        "iyy": 2.0922837569220114,
+        "izz": 0.10286814648608923,
+        "ixy": 0,
+        "ixz": -0.04158000440299534,
+        "iyz": 0
+      },
+      "visual_meshes": [],
+      "collision_meshes": []
+    },
+    {
+      "link_id": "link_004",
+      "name": "arm_link3",
+      "part_ids": [
+        "part_018",
+        "part_019",
+        "part_016",
+        "part_017"
+      ],
+      "mass": 14.397109381481602,
+      "inertia": {
+        "ixx": 1.324100874994249,
+        "iyy": 1.3250123603628285,
+        "izz": 0.0333376953443304,
+        "ixy": 8.388279998173147e-7,
+        "ixz": -0.014680660156313863,
+        "iyz": 0.00005775415914639875
+      },
+      "visual_meshes": [],
+      "collision_meshes": []
+    },
+    {
+      "link_id": "link_005",
+      "name": "arm_link4",
+      "part_ids": [
+        "part_020",
+        "part_021"
+      ],
+      "mass": 3.065379237996144,
+      "inertia": {
+        "ixx": 0.004131600788251699,
+        "iyy": 0.0041484904578807935,
+        "izz": 0.005946439694065872,
+        "ixy": -1.0126146528073792e-9,
+        "ixz": -0.00002301468072368751,
+        "iyz": -5.718066764015989e-9
+      },
+      "visual_meshes": [],
+      "collision_meshes": []
+    },
+    {
+      "link_id": "link_006",
+      "name": "arm_link5",
+      "part_ids": [
+        "part_022",
+        "part_023"
+      ],
+      "mass": 2.0898922178272223,
+      "inertia": {
+        "ixx": 0.00405764911768669,
+        "iyy": 0.0028894583470311375,
+        "izz": 0.002871156733407619,
+        "ixy": -5.700062679005451e-9,
+        "ixz": -0.00002294224348908802,
+        "iyz": -1.0094287995622266e-9
+      },
+      "visual_meshes": [],
+      "collision_meshes": []
+    },
+    {
+      "link_id": "link_007",
+      "name": "arm_link6",
+      "part_ids": [
+        "part_025",
+        "part_035",
+        "part_032",
+        "part_042"
+      ],
+      "mass": 0.1708626936999582,
+      "inertia": {
+        "ixx": 0.0003524474672533806,
+        "iyy": 0.00023340002119193182,
+        "izz": 0.00015030429794521709,
+        "ixy": -0.000014321608881178835,
+        "ixz": -0.000005333118570422304,
+        "iyz": 0.00007225563298766729
+      },
+      "visual_meshes": [],
+      "collision_meshes": []
+    },
+    {
+      "link_id": "link_008",
+      "name": "hooker_link",
+      "part_ids": [
+        "part_093",
+        "part_087",
+        "part_091",
+        "part_078",
+        "part_081",
+        "part_097",
+        "part_085",
+        "part_076",
+        "part_094",
+        "part_119",
+        "part_124",
+        "part_024",
+        "part_043",
+        "part_044",
+        "part_045",
+        "part_046",
+        "part_047",
+        "part_048",
+        "part_049",
+        "part_050",
+        "part_051",
+        "part_052",
+        "part_053",
+        "part_054",
+        "part_055",
+        "part_056",
+        "part_057",
+        "part_058",
+        "part_059",
+        "part_060",
+        "part_061",
+        "part_062",
+        "part_063",
+        "part_064",
+        "part_065",
+        "part_066",
+        "part_067",
+        "part_068",
+        "part_069",
+        "part_070",
+        "part_071",
+        "part_072",
+        "part_073",
+        "part_074",
+        "part_075",
+        "part_077",
+        "part_079",
+        "part_080",
+        "part_082",
+        "part_084",
+        "part_086",
+        "part_088",
+        "part_089",
+        "part_090",
+        "part_092",
+        "part_095",
+        "part_096",
+        "part_098",
+        "part_101",
+        "part_102",
+        "part_103",
+        "part_104",
+        "part_105",
+        "part_106",
+        "part_107",
+        "part_108",
+        "part_109",
+        "part_110",
+        "part_111",
+        "part_112",
+        "part_113",
+        "part_114",
+        "part_115",
+        "part_116",
+        "part_117",
+        "part_118",
+        "part_120",
+        "part_121",
+        "part_122",
+        "part_123",
+        "part_125"
+      ],
+      "mass": 1.008685249618154,
+      "inertia": {
+        "ixx": 0.0027117321365075497,
+        "iyy": 0.004934677275311827,
+        "izz": 0.004952932510140489,
+        "ixy": 0.000403104686463032,
+        "ixz": 0.00003041563584207929,
+        "iyz": -0.00010145148126902617
+      },
+      "visual_meshes": [],
+      "collision_meshes": []
+    }
+  ],
+  "joints": [
+    {
+      "joint_id": "arm_link1_joint",
+      "name": "arm_link1_joint",
+      "type": "revolute",
+      "parent": "arm_base_link",
+      "child": "arm_link1",
+      "origin": {
+        "xyz": [
+          229.62916457,
+          -540.62108363,
+          8e-8
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "limit": {
+        "lower": -3.14,
+        "upper": 3.14,
+        "effort": 10,
+        "velocity": 5
+      }
+    },
+    {
+      "joint_id": "arm_link2_joint",
+      "name": "arm_link2_joint",
+      "type": "revolute",
+      "parent": "arm_link1",
+      "child": "arm_link2",
+      "origin": {
+        "xyz": [
+          26.65772349,
+          -525.79252471,
+          8e-8
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "axis": [
+        -1,
+        0,
+        0
+      ],
+      "limit": {
+        "lower": -1.57,
+        "upper": 1.57,
+        "effort": 10,
+        "velocity": 5
+      }
+    },
+    {
+      "joint_id": "arm_link3_joint",
+      "name": "arm_link3_joint",
+      "type": "revolute",
+      "parent": "arm_link2",
+      "child": "arm_link3",
+      "origin": {
+        "xyz": [
+          116.8291626,
+          351.70773330416165,
+          -0.000108324910947033
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "limit": {
+        "lower": -3.14,
+        "upper": 3.14,
+        "effort": 10,
+        "velocity": 5
+      }
+    },
+    {
+      "joint_id": "arm_link4_joint",
+      "name": "arm_link4_joint",
+      "type": "revolute",
+      "parent": "arm_link3",
+      "child": "arm_link4",
+      "origin": {
+        "xyz": [
+          123.82916455,
+          1139.70747529,
+          8e-8
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "axis": [
+        -1,
+        0,
+        0
+      ],
+      "limit": {
+        "lower": -3.14,
+        "upper": 3.14,
+        "effort": 10,
+        "velocity": 5
+      }
+    },
+    {
+      "joint_id": "arm_link5_joint",
+      "name": "arm_link5_joint",
+      "type": "revolute",
+      "parent": "arm_link4",
+      "child": "arm_link5",
+      "origin": {
+        "xyz": [
+          60.32916455,
+          1151.60735314,
+          8e-8
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "limit": {
+        "lower": -3.14,
+        "upper": 3.14,
+        "effort": 10,
+        "velocity": 5
+      }
+    },
+    {
+      "joint_id": "arm_link6_joint",
+      "name": "arm_link6_joint",
+      "type": "revolute",
+      "parent": "arm_link5",
+      "child": "arm_link6",
+      "origin": {
+        "xyz": [
+          -3.92083545,
+          1274.20747529,
+          8e-8
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "limit": {
+        "lower": -3.14,
+        "upper": 3.14,
+        "effort": 10,
+        "velocity": 5
+      }
+    },
+    {
+      "joint_id": "hooker_joint",
+      "name": "hooker_joint",
+      "type": "fixed",
+      "parent": "arm_link6",
+      "child": "hooker_link",
+      "origin": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "axis": [
+        0,
+        0,
+        0
+      ],
+      "limit": {
+        "lower": -1.57,
+        "upper": 1.57,
+        "effort": 10,
+        "velocity": 5
+      }
+    }
+  ]
+}

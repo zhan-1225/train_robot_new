@@ -1,0 +1,460 @@
+[
+  {
+    "id": "sheet-contact-force",
+    "class": "sheet",
+    "title": "机械爪-车钩接触力建模",
+    "rootTopic": {
+      "id": "root-topic",
+      "class": "topic",
+      "title": "机械爪与车钩接触力建模",
+      "children": {
+        "attached": [
+          {
+            "id": "goal",
+            "class": "topic",
+            "title": "1. 建模目标",
+            "children": {
+              "attached": [
+                {
+                  "id": "goal-control",
+                  "class": "topic",
+                  "title": "为后续机械臂抓取车钩控制提供力反馈"
+                },
+                {
+                  "id": "goal-no-physics",
+                  "class": "topic",
+                  "title": "不依赖 Gazebo 网格碰撞直接测力"
+                },
+                {
+                  "id": "goal-output",
+                  "class": "topic",
+                  "title": "输出虚拟接触力 /virtual_coupler_force"
+                },
+                {
+                  "id": "goal-controller",
+                  "class": "topic",
+                  "title": "未来给导纳/阻抗控制器作为 F_ext 输入"
+                }
+              ]
+            }
+          },
+          {
+            "id": "problem",
+            "class": "topic",
+            "title": "2. 为什么不用真实碰撞力",
+            "children": {
+              "attached": [
+                {
+                  "id": "problem-hook-buffer",
+                  "class": "topic",
+                  "title": "车钩和缓冲器内部结构没有高精度建模"
+                },
+                {
+                  "id": "problem-mesh",
+                  "class": "topic",
+                  "title": "Gazebo 网格接触力主要来自碰撞穿透，不能代表缓冲器力学"
+                },
+                {
+                  "id": "problem-result",
+                  "class": "topic",
+                  "title": "因此接触力采用数学模型实时计算"
+                },
+                {
+                  "id": "problem-virtual-sensor",
+                  "class": "topic",
+                  "title": "把数学模型封装成虚拟力传感器"
+                }
+              ]
+            }
+          },
+          {
+            "id": "state",
+            "class": "topic",
+            "title": "3. 状态量定义",
+            "children": {
+              "attached": [
+                {
+                  "id": "state-frame",
+                  "class": "topic",
+                  "title": "通过 TF 获取 gripper_frame 与 target_frame 的相对位姿"
+                },
+                {
+                  "id": "state-distance",
+                  "class": "topic",
+                  "title": "距离 d = ||p_hook - p_gripper||"
+                },
+                {
+                  "id": "state-compression",
+                  "class": "topic",
+                  "title": "压缩量 x = max(0, d_contact - d)"
+                },
+                {
+                  "id": "state-slack",
+                  "class": "topic",
+                  "title": "考虑间隙后的有效压缩量 x_a = max(0, x - x_gap)"
+                },
+                {
+                  "id": "state-velocity",
+                  "class": "topic",
+                  "title": "相对速度 v = dx_a / dt"
+                },
+                {
+                  "id": "state-direction",
+                  "class": "topic",
+                  "title": "力方向 e = (p_gripper - p_hook) / ||p_gripper - p_hook||"
+                }
+              ]
+            }
+          },
+          {
+            "id": "models",
+            "class": "topic",
+            "title": "4. 候选接触力模型",
+            "children": {
+              "attached": [
+                {
+                  "id": "model-kv",
+                  "class": "topic",
+                  "title": "Kelvin-Voigt 线性弹簧阻尼",
+                  "children": {
+                    "attached": [
+                      {
+                        "id": "model-kv-formula",
+                        "class": "topic",
+                        "title": "F = k x + c v"
+                      },
+                      {
+                        "id": "model-kv-use",
+                        "class": "topic",
+                        "title": "优点：简单，适合打通控制数据流"
+                      },
+                      {
+                        "id": "model-kv-limit",
+                        "class": "topic",
+                        "title": "缺点：不能描述车钩缓冲器迟滞和间隙"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "model-hc",
+                  "class": "topic",
+                  "title": "Hunt-Crossley 非线性接触",
+                  "children": {
+                    "attached": [
+                      {
+                        "id": "model-hc-formula",
+                        "class": "topic",
+                        "title": "F = k x^n + lambda x^n v"
+                      },
+                      {
+                        "id": "model-hc-n",
+                        "class": "topic",
+                        "title": "n 常取 1.5，用于更平滑的接触过程"
+                      },
+                      {
+                        "id": "model-hc-use",
+                        "class": "topic",
+                        "title": "适合金属接触或需要平滑力曲线的场景"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "model-hysteresis",
+                  "class": "topic",
+                  "title": "间隙 + 弹性摩擦迟滞模型（当前采用）",
+                  "children": {
+                    "attached": [
+                      {
+                        "id": "model-gap",
+                        "class": "topic",
+                        "title": "间隙：x_a = max(0, x - x_gap)"
+                      },
+                      {
+                        "id": "model-load",
+                        "class": "topic",
+                        "title": "加载阶段 v >= 0：F_load = k_load x_a"
+                      },
+                      {
+                        "id": "model-unload",
+                        "class": "topic",
+                        "title": "卸载阶段 v < 0：F_unload = max(F_prev + k_unload Δx, 0)"
+                      },
+                      {
+                        "id": "model-lock",
+                        "class": "topic",
+                        "title": "锁止/摩擦段：F = F_prev + k_lock Δx"
+                      },
+                      {
+                        "id": "model-damping",
+                        "class": "topic",
+                        "title": "阻尼项：F_d = c v，仅在接触后加入"
+                      },
+                      {
+                        "id": "model-saturation",
+                        "class": "topic",
+                        "title": "限幅：F = clamp(F_hys + F_d, 0, F_max)"
+                      },
+                      {
+                        "id": "model-vector",
+                        "class": "topic",
+                        "title": "三维力：F_vec = F e"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "friction",
+            "class": "topic",
+            "title": "5. 摩擦与切向力扩展",
+            "children": {
+              "attached": [
+                {
+                  "id": "friction-normal",
+                  "class": "topic",
+                  "title": "当前先计算法向等效接触力 F_n"
+                },
+                {
+                  "id": "friction-coulomb",
+                  "class": "topic",
+                  "title": "库仑摩擦：F_t <= mu F_n"
+                },
+                {
+                  "id": "friction-viscous",
+                  "class": "topic",
+                  "title": "粘性摩擦：F_t = -c_t v_t"
+                },
+                {
+                  "id": "friction-future",
+                  "class": "topic",
+                  "title": "后续可分解相对速度为法向 v_n 与切向 v_t"
+                }
+              ]
+            }
+          },
+          {
+            "id": "ros",
+            "class": "topic",
+            "title": "6. ROS2/Gazebo 工程实现",
+            "children": {
+              "attached": [
+                {
+                  "id": "ros-node",
+                  "class": "topic",
+                  "title": "节点：virtual_coupler_force_node.py"
+                },
+                {
+                  "id": "ros-input",
+                  "class": "topic",
+                  "title": "输入：TF 中的 hooker_link 与 rviz_hook_base_link"
+                },
+                {
+                  "id": "ros-output-force",
+                  "class": "topic",
+                  "title": "输出：/virtual_coupler_force，geometry_msgs/WrenchStamped"
+                },
+                {
+                  "id": "ros-output-compression",
+                  "class": "topic",
+                  "title": "输出：/virtual_coupler_compression，std_msgs/Float64"
+                },
+                {
+                  "id": "ros-demo",
+                  "class": "topic",
+                  "title": "演示控制：simple_grasp_controller 发布关节命令"
+                },
+                {
+                  "id": "ros-gazebo",
+                  "class": "topic",
+                  "title": "Gazebo 关节运动：JointPositionController + /train_robot/j*_cmd_pos"
+                }
+              ]
+            }
+          },
+          {
+            "id": "params",
+            "class": "topic",
+            "title": "7. 当前主要参数",
+            "children": {
+              "attached": [
+                {
+                  "id": "param-contact",
+                  "class": "topic",
+                  "title": "contact_distance = 0.28 m"
+                },
+                {
+                  "id": "param-gap",
+                  "class": "topic",
+                  "title": "free_slack = 0.01 m"
+                },
+                {
+                  "id": "param-k",
+                  "class": "topic",
+                  "title": "stiffness = 12000 N/m"
+                },
+                {
+                  "id": "param-c",
+                  "class": "topic",
+                  "title": "damping = 350 N·s/m"
+                },
+                {
+                  "id": "param-load",
+                  "class": "topic",
+                  "title": "loading_stiffness = 5000 N/m"
+                },
+                {
+                  "id": "param-unload",
+                  "class": "topic",
+                  "title": "unloading_stiffness = 1800 N/m"
+                },
+                {
+                  "id": "param-lock",
+                  "class": "topic",
+                  "title": "lock_stiffness = 18000 N/m"
+                },
+                {
+                  "id": "param-limit",
+                  "class": "topic",
+                  "title": "max_force = 500 N"
+                }
+              ]
+            }
+          },
+          {
+            "id": "progress",
+            "class": "topic",
+            "title": "8. 目前进展",
+            "children": {
+              "attached": [
+                {
+                  "id": "progress-scene",
+                  "class": "topic",
+                  "title": "完整场景：hump + 3 节车厢 + power_cart + robot + hook"
+                },
+                {
+                  "id": "progress-arm",
+                  "class": "topic",
+                  "title": "已替换为新机械臂+机械爪模型"
+                },
+                {
+                  "id": "progress-hook",
+                  "class": "topic",
+                  "title": "hook 已放到机器人正前方，距离约 1.05 m"
+                },
+                {
+                  "id": "progress-controller",
+                  "class": "topic",
+                  "title": "已加入简单抓取演示控制程序"
+                },
+                {
+                  "id": "progress-motion",
+                  "class": "topic",
+                  "title": "Gazebo 运动改用 JointPositionController"
+                },
+                {
+                  "id": "progress-force",
+                  "class": "topic",
+                  "title": "已实现虚拟接触力话题 /virtual_coupler_force"
+                }
+              ]
+            }
+          },
+          {
+            "id": "validation",
+            "class": "topic",
+            "title": "9. 验证方法",
+            "children": {
+              "attached": [
+                {
+                  "id": "validation-run",
+                  "class": "topic",
+                  "title": "启动：ros2 launch robot_description gazebo_display.launch.py"
+                },
+                {
+                  "id": "validation-joint",
+                  "class": "topic",
+                  "title": "看关节命令：ros2 topic echo /train_robot/j2_cmd_pos"
+                },
+                {
+                  "id": "validation-force",
+                  "class": "topic",
+                  "title": "看力输出：ros2 topic echo /virtual_coupler_force"
+                },
+                {
+                  "id": "validation-compression",
+                  "class": "topic",
+                  "title": "看压缩量：ros2 topic echo /virtual_coupler_compression"
+                },
+                {
+                  "id": "validation-rviz",
+                  "class": "topic",
+                  "title": "RViz 看 TF/RobotModel，Gazebo 看实际场景运动"
+                }
+              ]
+            }
+          },
+          {
+            "id": "future",
+            "class": "topic",
+            "title": "10. 后续计划",
+            "children": {
+              "attached": [
+                {
+                  "id": "future-calibration",
+                  "class": "topic",
+                  "title": "标定参数：根据真实车钩缓冲器阻抗曲线拟合 k_load/k_unload/k_lock"
+                },
+                {
+                  "id": "future-geometry",
+                  "class": "topic",
+                  "title": "改进接触几何：用接触面/轴向距离代替单点欧氏距离"
+                },
+                {
+                  "id": "future-friction",
+                  "class": "topic",
+                  "title": "加入切向摩擦：F_t = clamp(-c_t v_t, ±mu F_n)"
+                },
+                {
+                  "id": "future-filter",
+                  "class": "topic",
+                  "title": "滤波：低通滤波或一阶滞后，减少力跳变"
+                },
+                {
+                  "id": "future-controller",
+                  "class": "topic",
+                  "title": "接入导纳控制：M Xddot + B Xdot + K(X-Xd) = F_ext"
+                },
+                {
+                  "id": "future-wrench",
+                  "class": "topic",
+                  "title": "可选：把 F_sim 反作用到车厢 link，推动列车动力学"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "topicPositioning": "fixed",
+    "relationships": [
+      {
+        "id": "rel-model-current",
+        "class": "relationship",
+        "end1Id": "model-hysteresis",
+        "end2Id": "progress-force",
+        "title": "当前实现"
+      },
+      {
+        "id": "rel-force-controller",
+        "class": "relationship",
+        "end1Id": "ros-output-force",
+        "end2Id": "future-controller",
+        "title": "后续接入"
+      }
+    ]
+  }
+]

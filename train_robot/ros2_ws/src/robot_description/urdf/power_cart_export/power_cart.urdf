@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="power_cart">
+  <joint name="joints_buffera1" type="prismatic">
+    <origin xyz="0. 6.25 -0.2825" rpy="0. 0. -1.5707927"/>
+    <parent link="power_cart"/>
+    <child link="power_cart_buffera1"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="0." effort="340282346638528859811704183484516925440." velocity="340282346638528859811704183484516925440."/>
+  </joint>
+  <joint name="joints_buffera2" type="revolute">
+    <origin xyz="-0.69186 0.0955 0.008 " rpy="-0.0000072 0. 1.5708 "/>
+    <parent link="power_cart_buffera1"/>
+    <child link="power_cart_buffera2"/>
+    <axis xyz="0. 0. 1."/>
+    <limit lower="0." upper="0." effort="340282346638528859811704183484516925440." velocity="5939047335254987724700441203225657344."/>
+  </joint>
+  <joint name="joints_bufferb1" type="prismatic">
+    <origin xyz="0. -6.25 -0.2825" rpy="0. 0. -1.5708"/>
+    <parent link="power_cart"/>
+    <child link="power_cart_bufferb1"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="0." effort="340282346638528859811704183484516925440." velocity="340282346638528859811704183484516925440."/>
+  </joint>
+  <joint name="joints_bufferb2" type="revolute">
+    <origin xyz="0.69186 -0.0955 0.008 " rpy="-3.1415854 0. 1.5708 "/>
+    <parent link="power_cart_bufferb1"/>
+    <child link="power_cart_bufferb2"/>
+    <axis xyz="0. 1. 0."/>
+    <limit lower="0." upper="0." effort="340282346638528859811704183484516925440." velocity="5939047335254987724700441203225657344."/>
+  </joint>
+  <joint name="joints_wl1" type="continuous">
+    <origin xyz="-0.84 5.4 -0.65" rpy="0. 0. 3.1415927"/>
+    <parent link="power_cart"/>
+    <child link="power_cart_wl1"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+  <joint name="joints_wl2" type="continuous">
+    <origin xyz="-0.84 4. -0.65" rpy="0. 0. 3.1415927"/>
+    <parent link="power_cart"/>
+    <child link="power_cart_wl2"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+  <joint name="joints_wl3" type="continuous">
+    <origin xyz="-0.84 -4. -0.65" rpy="0. 0. 3.1415927"/>
+    <parent link="power_cart"/>
+    <child link="power_cart_wl3"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+  <joint name="joints_wl4" type="continuous">
+    <origin xyz="-0.84 -5.4 -0.65" rpy="0. 0. 3.1415927"/>
+    <parent link="power_cart"/>
+    <child link="power_cart_wl4"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+  <joint name="joints_wr1" type="continuous">
+    <origin xyz="0.84 5.4 -0.65" rpy="0. 0. 3.1415927"/>
+    <parent link="power_cart"/>
+    <child link="power_cart_wr1"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+  <joint name="joints_wr2" type="continuous">
+    <origin xyz="0.84 4. -0.65" rpy="0. 0. 3.1415927"/>
+    <parent link="power_cart"/>
+    <child link="power_cart_wr2"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+  <joint name="joints_wr3" type="continuous">
+    <origin xyz="0.84 -4. -0.65" rpy="0. 0. 3.1415927"/>
+    <parent link="power_cart"/>
+    <child link="power_cart_wr3"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+  <joint name="joints_wr4" type="continuous">
+    <origin xyz="0.84 -5.4 -0.65" rpy="0. 0. 3.1415927"/>
+    <parent link="power_cart"/>
+    <child link="power_cart_wr4"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+  <link name="power_cart">
+    <inertial>
+      <origin xyz="0. 0. 0.55" rpy="0. 0. 0."/>
+      <mass value="1200."/>
+      <inertia ixx="1800." ixy="0." ixz="0." iyy="2200." iyz="0." izz="2600."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/urdf/power_cart_export/meshes/power_cart_base_link_visuals_base_link_mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+      <material name="power_cart_red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0. 7.15 0.9 " rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/urdf/power_cart_export/meshes/collisions_01_Cube.obj" scale="1. 1. 1."/>
+      </geometry>
+      <material name="power_cart_red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0. 6.9 0.9" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/urdf/power_cart_export/meshes/collisions_02_Cube.obj" scale="1. 1. 1."/>
+      </geometry>
+      <material name="power_cart_red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+    <collision name="power_cart_simple_collision">
+      <origin xyz="0. 0. 0.45" rpy="0. 0. 0."/>
+      <geometry>
+        <box size="1.9 12.8 0.9"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="power_cart_buffera1">
+    <inertial>
+      <origin xyz="0.3778629 0.0104562 -0.0128538" rpy="0. 0. 0."/>
+      <mass value="21.2226639"/>
+      <inertia ixx="0.4833724" ixy="-0.083492" ixz="0.0691394" iyy="1.9017533" iyz="-0.0002277" izz="2.0163126"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 3.1415925"/>
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/urdf/power_cart_export/meshes/power_cart_buffera1_visuals_buffera1_mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+      <material name="power_cart_red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <link name="power_cart_buffera2">
+    <inertial>
+      <origin xyz="0.0282464 -0.0193101 0.0004184" rpy="0. 0. 0."/>
+      <mass value="4.2128534"/>
+      <inertia ixx="0.0440957" ixy="-0.0052586" ixz="-0.0001746" iyy="0.0300436" iyz="0.0000984" izz="0.0367158"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. -0.0000002 -0. " rpy="-3.1415927 0. -3.1415925"/>
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/urdf/power_cart_export/meshes/power_cart_buffera2_visuals_buffera2_mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+      <material name="power_cart_red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <link name="power_cart_bufferb1">
+    <inertial>
+      <origin xyz="0.3778629 0.0104562 -0.0128538" rpy="0. 0. 0."/>
+      <mass value="21.2226639"/>
+      <inertia ixx="0.4833724" ixy="-0.083492" ixz="0.0691394" iyy="1.9017533" iyz="-0.0002277" izz="2.0163126"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0.0000001"/>
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/urdf/power_cart_export/meshes/power_cart_bufferb1_visuals_bufferb1_mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+      <material name="power_cart_red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <link name="power_cart_bufferb2">
+    <inertial>
+      <origin xyz="0.0282464 -0.0193101 0.0004184" rpy="0. 0. 0."/>
+      <mass value="4.2128534"/>
+      <inertia ixx="0.0440957" ixy="-0.0052586" ixz="-0.0001746" iyy="0.0300436" iyz="0.0000984" izz="0.0367158"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0. 0. 0." rpy="0. 0. 0.0000001"/>
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/urdf/power_cart_export/meshes/power_cart_bufferb2_visuals_bufferb2_mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+      <material name="power_cart_red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <link name="power_cart_wl1">
+    <inertial>
+      <origin xyz="-0.1 0. 0. " rpy="0. 0. 0."/>
+      <mass value="419.6483154"/>
+      <inertia ixx="76.5211334" ixy="0." ixz="0." iyy="48.4740181" iyz="0." izz="48.4740181"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 3.1415927"/>
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/urdf/power_cart_export/meshes/power_cart_wl1_visuals_wl1_mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+      <material name="power_cart_red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <link name="power_cart_wl2">
+    <inertial>
+      <origin xyz="-0.1 0. 0. " rpy="0. 0. 0."/>
+      <mass value="419.6483154"/>
+      <inertia ixx="76.5211334" ixy="0." ixz="0." iyy="48.4740181" iyz="0." izz="48.4740181"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 3.1415927"/>
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/urdf/power_cart_export/meshes/power_cart_wl2_visuals_wl2_mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+      <material name="power_cart_red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <link name="power_cart_wl3">
+    <inertial>
+      <origin xyz="-0.1 0. 0. " rpy="0. 0. 0."/>
+      <mass value="419.6483154"/>
+      <inertia ixx="76.5211334" ixy="0." ixz="0." iyy="48.4740181" iyz="0." izz="48.4740181"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 3.1415927"/>
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/urdf/power_cart_export/meshes/power_cart_wl3_visuals_wl3_mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+      <material name="power_cart_red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <link name="power_cart_wl4">
+    <inertial>
+      <origin xyz="-0.1 0. 0. " rpy="0. 0. 0."/>
+      <mass value="419.6483154"/>
+      <inertia ixx="76.5211334" ixy="0." ixz="0." iyy="48.4740181" iyz="-0." izz="48.4740181"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 3.1415927"/>
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/urdf/power_cart_export/meshes/power_cart_wl4_visuals_wl4_mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+      <material name="power_cart_red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <link name="power_cart_wr1">
+    <inertial>
+      <origin xyz="0.1 0. 0. " rpy="0. 0. 0."/>
+      <mass value="419.6483154"/>
+      <inertia ixx="76.5211334" ixy="0." ixz="0." iyy="48.4740181" iyz="0." izz="48.4740181"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 3.1415927"/>
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/urdf/power_cart_export/meshes/power_cart_wr1_visuals_wr1_mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+      <material name="power_cart_red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <link name="power_cart_wr2">
+    <inertial>
+      <origin xyz="0.1 0. 0. " rpy="0. 0. 0."/>
+      <mass value="419.6483154"/>
+      <inertia ixx="76.5211334" ixy="0." ixz="0." iyy="48.4740181" iyz="-0." izz="48.4740181"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 3.1415927"/>
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/urdf/power_cart_export/meshes/power_cart_wr2_visuals_wr2_mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+      <material name="power_cart_red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <link name="power_cart_wr3">
+    <inertial>
+      <origin xyz="0.1 0. 0. " rpy="0. 0. 0."/>
+      <mass value="419.6483154"/>
+      <inertia ixx="76.5211334" ixy="0." ixz="0." iyy="48.4740181" iyz="0." izz="48.4740181"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 3.1415927"/>
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/urdf/power_cart_export/meshes/power_cart_wr3_visuals_wr3_mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+      <material name="power_cart_red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <link name="power_cart_wr4">
+    <inertial>
+      <origin xyz="0.1 0. 0. " rpy="0. 0. 0."/>
+      <mass value="419.6483154"/>
+      <inertia ixx="76.5211334" ixy="0." ixz="0." iyy="48.4740181" iyz="0." izz="48.4740181"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 3.1415927"/>
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/urdf/power_cart_export/meshes/power_cart_wr4_visuals_wr4_mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+      <material name="power_cart_red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <gazebo reference="power_cart">
+    <material>Gazebo/Red</material>
+    <ambient>1.0 0.0 0.0 1.0</ambient>
+    <diffuse>1.0 0.0 0.0 1.0</diffuse>
+    <specular>0.25 0.05 0.05 1.0</specular>
+  </gazebo>
+  <gazebo reference="power_cart_buffera1">
+    <material>Gazebo/Red</material>
+    <ambient>1.0 0.0 0.0 1.0</ambient>
+    <diffuse>1.0 0.0 0.0 1.0</diffuse>
+    <specular>0.25 0.05 0.05 1.0</specular>
+  </gazebo>
+  <gazebo reference="power_cart_buffera2">
+    <material>Gazebo/Red</material>
+    <ambient>1.0 0.0 0.0 1.0</ambient>
+    <diffuse>1.0 0.0 0.0 1.0</diffuse>
+    <specular>0.25 0.05 0.05 1.0</specular>
+  </gazebo>
+  <gazebo reference="power_cart_bufferb1">
+    <material>Gazebo/Red</material>
+    <ambient>1.0 0.0 0.0 1.0</ambient>
+    <diffuse>1.0 0.0 0.0 1.0</diffuse>
+    <specular>0.25 0.05 0.05 1.0</specular>
+  </gazebo>
+  <gazebo reference="power_cart_bufferb2">
+    <material>Gazebo/Red</material>
+    <ambient>1.0 0.0 0.0 1.0</ambient>
+    <diffuse>1.0 0.0 0.0 1.0</diffuse>
+    <specular>0.25 0.05 0.05 1.0</specular>
+  </gazebo>
+  <gazebo reference="power_cart_wl1">
+    <material>Gazebo/Red</material>
+    <ambient>1.0 0.0 0.0 1.0</ambient>
+    <diffuse>1.0 0.0 0.0 1.0</diffuse>
+    <specular>0.25 0.05 0.05 1.0</specular>
+  </gazebo>
+  <gazebo reference="power_cart_wl2">
+    <material>Gazebo/Red</material>
+    <ambient>1.0 0.0 0.0 1.0</ambient>
+    <diffuse>1.0 0.0 0.0 1.0</diffuse>
+    <specular>0.25 0.05 0.05 1.0</specular>
+  </gazebo>
+  <gazebo reference="power_cart_wl3">
+    <material>Gazebo/Red</material>
+    <ambient>1.0 0.0 0.0 1.0</ambient>
+    <diffuse>1.0 0.0 0.0 1.0</diffuse>
+    <specular>0.25 0.05 0.05 1.0</specular>
+  </gazebo>
+  <gazebo reference="power_cart_wl4">
+    <material>Gazebo/Red</material>
+    <ambient>1.0 0.0 0.0 1.0</ambient>
+    <diffuse>1.0 0.0 0.0 1.0</diffuse>
+    <specular>0.25 0.05 0.05 1.0</specular>
+  </gazebo>
+  <gazebo reference="power_cart_wr1">
+    <material>Gazebo/Red</material>
+    <ambient>1.0 0.0 0.0 1.0</ambient>
+    <diffuse>1.0 0.0 0.0 1.0</diffuse>
+    <specular>0.25 0.05 0.05 1.0</specular>
+  </gazebo>
+  <gazebo reference="power_cart_wr2">
+    <material>Gazebo/Red</material>
+    <ambient>1.0 0.0 0.0 1.0</ambient>
+    <diffuse>1.0 0.0 0.0 1.0</diffuse>
+    <specular>0.25 0.05 0.05 1.0</specular>
+  </gazebo>
+  <gazebo reference="power_cart_wr3">
+    <material>Gazebo/Red</material>
+    <ambient>1.0 0.0 0.0 1.0</ambient>
+    <diffuse>1.0 0.0 0.0 1.0</diffuse>
+    <specular>0.25 0.05 0.05 1.0</specular>
+  </gazebo>
+  <gazebo reference="power_cart_wr4">
+    <material>Gazebo/Red</material>
+    <ambient>1.0 0.0 0.0 1.0</ambient>
+    <diffuse>1.0 0.0 0.0 1.0</diffuse>
+    <specular>0.25 0.05 0.05 1.0</specular>
+  </gazebo>
+  <gazebo>
+    <static>true</static>
+  </gazebo>
+</robot>

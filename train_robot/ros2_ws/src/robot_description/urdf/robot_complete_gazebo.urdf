@@ -1,0 +1,1444 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="robot">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-7.22287839337554E-05 -0.00215295361631975 0.324863596005363" rpy="0 0 0" />
+      <mass value="165.61036422321" />
+      <inertia ixx="32.965361421801" ixy="-4.58943188877295E-10" ixz="-2.30197800542194E-10" iyy="12.6332666224088" iyz="-0.000847797837113684" izz="42.003560166963" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision name="base_link_simple_collision">
+      <origin xyz="0 0 0.32" rpy="0 0 0" />
+      <geometry>
+        <box size="1.45 2.10 0.55" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="arm_base_link">
+    <inertial>
+      <origin xyz="0.22450072 0 -0.69163253" rpy="0 0 0" />
+      <mass value="4.8552447" />
+      <inertia ixx="0.031680203" iyy="0.029660428" izz="0.045672081" ixy="0" ixz="-0.00025796263" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_005_surface_shell_005.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_002_surface_shell_002.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="link1">
+    <inertial>
+      <origin xyz="-0.010768995 7.2684119e-10 0.022543009" rpy="0 0 0" />
+      <mass value="12.615124" />
+      <inertia ixx="0.074294709" iyy="0.083647857" izz="0.0776843" ixy="8.2726716e-10" ixz="-0.00096139675" iyz="6.2949787e-11" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.22962916 0 0.54062108" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_003_surface_shell_003.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="-0.22962916 0 0.54062108" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_004_surface_shell_004.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="-0.22962916 0 0.54062108" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_006_surface_shell_006.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="link2">
+    <inertial>
+      <origin xyz="-0.017904992 0 0.26175646" rpy="0 0 0" />
+      <mass value="20.874301" />
+      <inertia ixx="2.082008" iyy="2.0922838" izz="0.10286815" ixy="0" ixz="-0.041580004" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.026657723 0 0.52579252" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_009_surface_shell_009.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="-0.026657723 0 0.52579252" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_007_surface_shell_007.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="-0.026657723 0 0.52579252" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_012_surface_shell_012.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="-0.026657723 0 0.52579252" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_008_surface_shell_008.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="-0.026657723 0 0.52579252" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_010_surface_shell_010.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="-0.026657723 0 0.52579252" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_013_surface_shell_013.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="-0.026657723 0 0.52579252" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_014_surface_shell_014.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="link3">
+    <inertial>
+      <origin xyz="0.07704222 1.0111868e-05 0.42937999" rpy="0 0 0" />
+      <mass value="14.397109" />
+      <inertia ixx="1.3241009" iyy="1.3250124" izz="0.033337695" ixy="8.38828e-07" ixz="-0.01468066" iyz="5.7754159e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.11682916 -1.0832491e-07 -0.35170773" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_018_surface_shell_018.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="-0.11682916 -1.0832491e-07 -0.35170773" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_019_surface_shell_019.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="-0.11682916 -1.0832491e-07 -0.35170773" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_016_surface_shell_016.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="-0.11682916 -1.0832491e-07 -0.35170773" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_017_surface_shell_017.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="link4">
+    <inertial>
+      <origin xyz="-0.063238768 -2.1242218e-06 -0.047326444" rpy="0 0 0" />
+      <mass value="3.0653792" />
+      <inertia ixx="0.0041316008" iyy="0.0041484905" izz="0.0059464397" ixy="-1.0126147e-09" ixz="-2.3014681e-05" iyz="-5.7180668e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.12382916 0 -1.1397075" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_020_surface_shell_020.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="-0.12382916 0 -1.1397075" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_021_surface_shell_021.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="link5">
+    <inertial>
+      <origin xyz="0.046931114 2.1069891e-06 0.12226889" rpy="0 0 0" />
+      <mass value="2.0898922" />
+      <inertia ixx="0.0040576491" iyy="0.0028894583" izz="0.0028711567" ixy="-5.7000627e-09" ixz="-2.2942243e-05" iyz="-1.0094288e-09" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.060329165 0 -1.1516074" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_022_surface_shell_022.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="-0.060329165 0 -1.1516074" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_023_surface_shell_023.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="link6">
+    <inertial>
+      <origin xyz="-0.018227671 -0.013915083 -0.0052569311" rpy="0 0 0" />
+      <mass value="0.17086269" />
+      <inertia ixx="0.00035244747" iyy="0.00023340002" izz="0.0001503043" ixy="-1.4321609e-05" ixz="-5.3331186e-06" iyz="7.2255633e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0.0039208355 0 -1.2742075" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_025_surface_shell_025.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0.0039208355 0 -1.2742075" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_035_surface_shell_035.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0.0039208355 0 -1.2742075" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_032_surface_shell_032.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0.0039208355 0 -1.2742075" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_042_surface_shell_042.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="arm_dark_graphite">
+        <color rgba="0.08 0.085 0.09 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="hooker_link">
+    <inertial>
+      <origin xyz="-0.148398 0.0047145063 1.2751437" rpy="0 0 0" />
+      <mass value="1.0086852" />
+      <inertia ixx="0.0027117321" iyy="0.0049346773" izz="0.0049529325" ixy="0.00040310469" ixz="3.0415636e-05" iyz="-0.00010145148" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_093_solid_093.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_087_solid_087.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_091_solid_091.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_078_solid_078.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_081_solid_081.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_097_solid_097.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_085_solid_085.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_076_solid_076.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_094_solid_094.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_119_solid_119.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_124_solid_124.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_024_surface_shell_024.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_043_solid_043.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_044_solid_044.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_045_solid_045.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_046_solid_046.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_047_solid_047.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_048_solid_048.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_049_solid_049.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_050_solid_050.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_051_solid_051.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_052_solid_052.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_053_solid_053.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_054_solid_054.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_055_solid_055.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_056_solid_056.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_057_solid_057.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_058_solid_058.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_059_solid_059.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_060_solid_060.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_061_solid_061.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_062_solid_062.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_063_solid_063.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_064_solid_064.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_065_solid_065.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_066_solid_066.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_067_solid_067.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_068_solid_068.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_069_solid_069.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_070_solid_070.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_071_solid_071.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_072_solid_072.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_073_solid_073.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_074_solid_074.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_075_solid_075.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_077_solid_077.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_079_solid_079.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_080_solid_080.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_082_solid_082.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_084_solid_084.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_086_solid_086.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_088_solid_088.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_089_solid_089.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_090_solid_090.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_092_solid_092.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_095_solid_095.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_096_solid_096.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_098_solid_098.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_101_solid_101.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_102_solid_102.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_103_solid_103.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_104_solid_104.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_105_solid_105.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_106_solid_106.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_107_solid_107.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_108_solid_108.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_109_solid_109.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_110_solid_110.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_111_solid_111.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_112_solid_112.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_113_solid_113.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_114_solid_114.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_115_solid_115.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_116_solid_116.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_117_solid_117.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_118_solid_118.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_120_solid_120.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_121_solid_121.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_122_solid_122.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_123_solid_123.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/mr7k3lxd/part_125_solid_125.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gripper_metal_grey">
+        <color rgba="0.36 0.36 0.34 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="arm_mount_joint" type="fixed">
+    <origin xyz="-0.005 -0.350 1.285" rpy="0 0 1.5708" />
+    <parent link="base_link" />
+    <child link="arm_base_link" />
+  </joint>
+  <joint name="j1" type="revolute">
+    <origin xyz="0.22962916 0 -0.54062108" rpy="0 0 0" />
+    <parent link="arm_base_link" />
+    <child link="link1" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="1.62" />
+    <dynamics damping="1.0" friction="0.1" />
+  </joint>
+  <joint name="j2" type="revolute">
+    <origin xyz="-0.20297144 0 0.014828559" rpy="0 0 0" />
+    <parent link="link1" />
+    <child link="link2" />
+    <axis xyz="-1 0 0" />
+    <limit lower="-1.57" upper="1.57" effort="100" velocity="3.10" />
+    <dynamics damping="1.0" friction="0.1" />
+  </joint>
+  <joint name="j3" type="revolute">
+    <origin xyz="0.090171439 1.0840491e-07 0.87750026" rpy="0 0 0" />
+    <parent link="link2" />
+    <child link="link3" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="3.10" />
+    <dynamics damping="1.0" friction="0.1" />
+  </joint>
+  <joint name="j4" type="revolute">
+    <origin xyz="0.007000002 -1.0840491e-07 0.78799974" rpy="0 0 0" />
+    <parent link="link3" />
+    <child link="link4" />
+    <axis xyz="-1 0 0" />
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="3.10" />
+    <dynamics damping="1.0" friction="0.1" />
+  </joint>
+  <joint name="j5" type="revolute">
+    <origin xyz="-0.0635 0 0.011899878" rpy="0 0 0" />
+    <parent link="link4" />
+    <child link="link5" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="3.10" />
+    <dynamics damping="1.0" friction="0.1" />
+  </joint>
+  <joint name="j6" type="revolute">
+    <origin xyz="-0.06425 0 0.12260012" rpy="0 0 0" />
+    <parent link="link5" />
+    <child link="link6" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="1.62" />
+    <dynamics damping="1.0" friction="0.1" />
+  </joint>
+  <joint name="joint_grasp" type="fixed">
+    <origin xyz="0.0039208355 0 -1.2742075" rpy="0 0 0" />
+    <parent link="link6" />
+    <child link="hooker_link" />
+  </joint>
+  <link name="wl1">
+    <inertial>
+      <origin xyz="0.0290880456704233 0 0" rpy="0 0 0" />
+      <mass value="5.35162830148466" />
+      <inertia ixx="0.0785771556064541" ixy="2.06571371557815E-35" ixz="5.7477857248605E-35" iyy="0.040993158685314" iyz="3.00703442581003E-34" izz="0.040993158685314" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/wl1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.3 0.3 0.3 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="wl1_joint" type="continuous">
+    <origin xyz="-0.425 0.45 0.169" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="wl1" />
+    <axis xyz="-1 0 0" />
+    <dynamics damping="0.5" friction="0.1" />
+  </joint>
+  <link name="wr1">
+    <inertial>
+      <origin xyz="-0.0290880456704234 0 0" rpy="0 0 0" />
+      <mass value="5.35162830148466" />
+      <inertia ixx="0.0785771556064541" ixy="-4.77943611846627E-35" ixz="5.7477857248605E-35" iyy="0.040993158685314" iyz="-3.00703442581003E-34" izz="0.040993158685314" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/wr1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.3 0.3 0.3 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="wr1_joint" type="continuous">
+    <origin xyz="0.425 0.45 0.169" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="wr1" />
+    <axis xyz="-1 0 0" />
+    <dynamics damping="0.5" friction="0.1" />
+  </joint>
+  <link name="wl2">
+    <inertial>
+      <origin xyz="0.0290880456704233 5.55111512312578E-17 0" rpy="0 0 0" />
+      <mass value="5.35162830148466" />
+      <inertia ixx="0.0785771556064541" ixy="2.06571371557815E-35" ixz="5.7477857248605E-35" iyy="0.040993158685314" iyz="3.00703442581003E-34" izz="0.040993158685314" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/wl2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.3 0.3 0.3 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="wl2_joint" type="continuous">
+    <origin xyz="-0.425 -0.45 0.169" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="wl2" />
+    <axis xyz="-1 0 0" />
+    <dynamics damping="0.5" friction="0.1" />
+  </joint>
+  <link name="wr2">
+    <inertial>
+      <origin xyz="-0.0290880456704234 5.55111512312578E-17 0" rpy="0 0 0" />
+      <mass value="5.35162830148466" />
+      <inertia ixx="0.0785771556064541" ixy="-4.77943611846627E-35" ixz="5.7477857248605E-35" iyy="0.040993158685314" iyz="-3.00703442581003E-34" izz="0.040993158685314" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/wr2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.3 0.3 0.3 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="wr2_joint" type="continuous">
+    <origin xyz="0.425 -0.45 0.169" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="wr2" />
+    <axis xyz="-1 0 0" />
+    <dynamics damping="0.5" friction="0.1" />
+  </joint>
+  <link name="f1">
+    <inertial>
+      <origin xyz="-0.448165889386651 -0.275148051459907 0.785192171007059" rpy="0 0 0" />
+      <mass value="6.48280472708925" />
+      <inertia ixx="0.259086426049895" ixy="0.00403011710090608" ixz="-0.0153284657643075" iyy="0.382736373204116" iyz="0.00302824380532944" izz="0.223941382712416" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/f1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="f1_joint" type="fixed">
+    <origin xyz="0.00057481 6.9036E-05 0.041028" rpy="0 0 -1.5708" />
+    <parent link="base_link" />
+    <child link="f1" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="f2">
+    <inertial>
+      <origin xyz="-1.11022302462516E-16 0 0.29" rpy="0 0 0" />
+      <mass value="0.522000000000001" />
+      <inertia ixx="0.01467255" ixy="1.19602678455566E-20" ixz="-5.64688631502858E-21" iyy="0.01467255" iyz="7.05702857262126E-20" izz="7.83000000000002E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="/home/zhan/train_robot-main/train_robot/ros2_ws/src/robot_description/meshes/f2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="f2_joint" type="fixed">
+    <origin xyz="-0.385 -0.685 0.445" rpy="0 0 -1.5708" />
+    <parent link="base_link" />
+    <child link="f2" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="camera_down_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.1" />
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001" />
+    </inertial>
+  </link>
+  <joint name="camera_down_joint" type="fixed">
+    <origin xyz="-0.3 0 0.3" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="camera_down_link" />
+  </joint>
+  <link name="camera_up_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.1" />
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001" />
+    </inertial>
+  </link>
+  <joint name="camera_up_joint" type="fixed">
+    <origin xyz="0 0 0.8" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="camera_up_link" />
+  </joint>
+  <link name="camera_hand_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.05" />
+      <inertia ixx="0.00001" ixy="0" ixz="0" iyy="0.00001" iyz="0" izz="0.00001" />
+    </inertial>
+  </link>
+  <joint name="camera_hand_joint" type="fixed">
+    <origin xyz="0 0 0.05" rpy="0 0 0" />
+    <parent link="link6" />
+    <child link="camera_hand_link" />
+  </joint>
+  <link name="lidar_down_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.5" />
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001" />
+    </inertial>
+  </link>
+  <joint name="lidar_down_joint" type="fixed">
+    <origin xyz="-0.3 0 0.6" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="lidar_down_link" />
+  </joint>
+  <link name="lidar_up_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.5" />
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001" />
+    </inertial>
+  </link>
+  <joint name="lidar_up_joint" type="fixed">
+    <origin xyz="0 0 1.0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="lidar_up_link" />
+  </joint>
+  <gazebo reference="camera_down_link">
+    <sensor name="camera_down" type="camera">
+      <update_rate>30.0</update_rate>
+      <camera name="camera_down">
+        <horizontal_fov>1.047</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>5.0</far>
+        </clip>
+      </camera>
+      <topic>camera_down</topic>
+      <always_on>1</always_on>
+    </sensor>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="camera_up_link">
+    <sensor name="camera_up" type="camera">
+      <update_rate>30.0</update_rate>
+      <camera name="camera_up">
+        <horizontal_fov>1.047</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>10.0</far>
+        </clip>
+      </camera>
+      <topic>camera_up</topic>
+      <always_on>1</always_on>
+    </sensor>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="camera_hand_link">
+    <sensor name="camera_hand" type="camera">
+      <update_rate>30.0</update_rate>
+      <camera name="camera_hand">
+        <horizontal_fov>1.5708</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.05</near>
+          <far>2.0</far>
+        </clip>
+      </camera>
+      <topic>camera_hand</topic>
+      <always_on>1</always_on>
+    </sensor>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="joint_grasp">
+    <preserveFixedJoint>true</preserveFixedJoint>
+  </gazebo>
+  <gazebo reference="lidar_down_link">
+    <sensor name="lidar_down" type="gpu_lidar">
+      <update_rate>10.0</update_rate>
+      <lidar>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1.0</resolution>
+            <min_angle>-3.14159</min_angle>
+            <max_angle>3.14159</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>1</samples>
+            <resolution>1.0</resolution>
+            <min_angle>0.0</min_angle>
+            <max_angle>0.0</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>0.1</min>
+          <max>20.0</max>
+          <resolution>0.01</resolution>
+        </range>
+      </lidar>
+      <topic>lidar_down</topic>
+      <always_on>1</always_on>
+    </sensor>
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="lidar_up_link">
+    <sensor name="lidar_up" type="gpu_lidar">
+      <update_rate>10.0</update_rate>
+      <lidar>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1.0</resolution>
+            <min_angle>-3.14159</min_angle>
+            <max_angle>3.14159</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>1</samples>
+            <resolution>1.0</resolution>
+            <min_angle>0.0</min_angle>
+            <max_angle>0.0</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>0.1</min>
+          <max>20.0</max>
+          <resolution>0.01</resolution>
+        </range>
+      </lidar>
+      <topic>lidar_up</topic>
+      <always_on>1</always_on>
+    </sensor>
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="arm_base_link">
+    <material>Gazebo/Black</material>
+    <ambient>0.08 0.085 0.09 1</ambient>
+    <diffuse>0.08 0.085 0.09 1</diffuse>
+  </gazebo>
+  <gazebo reference="link1">
+    <material>Gazebo/Black</material>
+    <ambient>0.08 0.085 0.09 1</ambient>
+    <diffuse>0.08 0.085 0.09 1</diffuse>
+  </gazebo>
+  <gazebo reference="link2">
+    <material>Gazebo/Black</material>
+    <ambient>0.08 0.085 0.09 1</ambient>
+    <diffuse>0.08 0.085 0.09 1</diffuse>
+  </gazebo>
+  <gazebo reference="link3">
+    <material>Gazebo/Black</material>
+    <ambient>0.08 0.085 0.09 1</ambient>
+    <diffuse>0.08 0.085 0.09 1</diffuse>
+  </gazebo>
+  <gazebo reference="link4">
+    <material>Gazebo/Black</material>
+    <ambient>0.08 0.085 0.09 1</ambient>
+    <diffuse>0.08 0.085 0.09 1</diffuse>
+  </gazebo>
+  <gazebo reference="link5">
+    <material>Gazebo/Black</material>
+    <ambient>0.08 0.085 0.09 1</ambient>
+    <diffuse>0.08 0.085 0.09 1</diffuse>
+  </gazebo>
+  <gazebo reference="link6">
+    <material>Gazebo/Black</material>
+    <ambient>0.08 0.085 0.09 1</ambient>
+    <diffuse>0.08 0.085 0.09 1</diffuse>
+  </gazebo>
+  <gazebo reference="hooker_link">
+    <material>Gazebo/Grey</material>
+    <ambient>0.36 0.36 0.34 1</ambient>
+    <diffuse>0.36 0.36 0.34 1</diffuse>
+  </gazebo>
+  <gazebo>
+    <static>true</static>
+  </gazebo>
+</robot>
